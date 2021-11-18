@@ -34,11 +34,57 @@ main img {
   width: 100px;
 }
 
+.group img {
+  width: 100px;
+  padding: 10px;
+}
+
+.group-ideas {
+  width: 100px;
+  padding: 10px;
+}
+
+.group-ideas img {
+  width: 100px;
+  padding: 10px;
+}
+
+.group-host {
+  width: 100px;
+  padding: 10px;
+}
+
+.group img {
+  width: 100px;
+  padding: 10px;
+}
 /* ---  Groups & Items --- */
 
 .group {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.group-ideas {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.group-host {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
 }
 
 .item {
@@ -64,6 +110,17 @@ header {
   color: #fff;
 }
 
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
 header nav ul li {
   list-style-type: none;
 }
@@ -83,6 +140,12 @@ header nav ul li a:hover {
 form {
   border: 2px solid #ff385c;
   padding: 10px;
+}
+
+.form-items {
+  flex-direction: row;
+  height: auto;
+  align-self: auto;
 }
 
 form label {
@@ -117,3 +180,66 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width: 800px){
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    margin: 14px;
+    padding-top: 6px;
+    font-size: 36px;
+    text-align: left;
+  }
+
+  header nav {
+    margin-top: 14px;
+  }
+
+  p{
+    font-size: 12px;
+    width: 50%;
+    height: 100px;
+    padding: 10px;
+  }
+
+  .form-items {
+    display: flex;
+  }
+
+  .form-item {
+    padding: 10px;
+  }
+
+  .group {
+    display: grid;
+    grid-template-columns: 30% 30% 40%;
+    grid-gap: 10px;
+  }
+
+  .group-ideas {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+  }
+
+  .group-ideas img {
+    width: 100;
+  }
+
+  .group-host {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+  }
+
+  .group-host img {
+    width: 100%;
+  }
+  
+}
