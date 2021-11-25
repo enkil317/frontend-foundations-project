@@ -34,57 +34,11 @@ main img {
   width: 100px;
 }
 
-.group img {
-  width: 100%;
-  padding: 10px;
-}
-
-.group-ideas {
-  width: 100%;
-  padding: 10px;
-}
-
-.group-ideas img {
-  width: 100%;
-  padding: 10px;
-}
-
-.group-host {
-  width: 100%;
-  padding: 10px;
-}
-
-.group-host img {
-  width: 100%;
-  padding: 10px;
-}
 /* ---  Groups & Items --- */
 
 .group {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-.group-ideas {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-
-.group-host {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
 }
 
 .item {
@@ -94,6 +48,10 @@ main img {
 
 .item-double {
   flex: 2;
+}
+
+.item img {
+  width: 100%;
 }
 
 /* -------  Navigation ------- */
@@ -106,19 +64,16 @@ header {
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 48px;
   color: #fff;
-}
-
-header nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 
 header nav ul {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 0;
 }
 
 header nav ul li {
@@ -142,14 +97,13 @@ form {
   padding: 10px;
 }
 
-.form-items {
-  flex-direction: row;
-  height: auto;
-  align-self: auto;
-}
-
 form label {
   font-weight: bold;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
 }
 
 form select,
@@ -181,71 +135,54 @@ footer p {
 
 /* -------  Media Query ------- */
 
-@media all and (min-width: 600px){
-
+@media all and (min-width: 480px) {
   header {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 
-  header h1 {
-    margin: 14px;
-    padding-top: 6px;
-    font-size: 36px;
-    text-align: left;
-  }
-
-  header nav {
-    margin-top: 14px;
-  }
-
-  p {
-    font-size: 12px;
-    width: 50%;
-    height: 200px;
-  }
-
-  .p-about {
-    font-size: 12px;
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-  }
-
-  .form-items {
+  form {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .form-item {
-    padding: 10px;
+  form select,
+  form input {
+    margin-bottom: 0;
+    width: 72px;
+  }
+
+  form div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 50px;
   }
 
   .group {
-    display: grid;
-    grid-template-columns: 30% 30% 40%;
-     grid-gap: 10px; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .group-ideas {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 50% 50%;
-     grid-gap: 10px; 
+  #ideas .group {
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
   }
 
-  .group-ideas img {
-    width: 100;
+  #ideas div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
-
-  .group-host {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 50% 50%;
-     grid-gap: 10px; 
-  }
-
-  .group-host img {
-    width: 100%;
-  }
-
 }
